@@ -8,7 +8,7 @@ default_target: DCM_DEV
 
 targets:
   DCM_DEV:
-    account_identifier: MYORG-MY_DEV_ACCOUNT        # update to your account names
+    account_identifier: TNEULKY-JT38090        # update to your account names
     project_name: DCM_DEMO.PROJECTS.DCM_PROJECT_DEV
     project_owner: DCM_DEVELOPER
     templating_config: DEV
@@ -57,15 +57,15 @@ templating:
       project_owner_role: "DCM_DEVELOPER" 
       # CHANGE STEP 2 of 3: uncomment the line below to resize the warehouse.
       # wh_size inherits "X-SMALL" from templating.defaults until you set it here.
-      # wh_size: "SMALL"
+      wh_size: "SMALL"
       teams: 
         - name: "DEV_TEAM_1" 
           data_retention_days: 1
         # CHANGE STEP 3 of 3: uncomment the two lines below to add a second team.
         # The Jinja loop and the macro expand them into a new schema and two new
         # roles, so one manifest edit produces several CREATEs in the plan.
-        # - name: "DEV_TEAM_2"
-        #   data_retention_days: 3
+        - name: "DEV_TEAM_2"
+          data_retention_days: 3
       
     STAGE:
       env_suffix: "_STG"
